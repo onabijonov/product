@@ -153,7 +153,7 @@ export default function App() {
           initial={{ opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0 }}
-          className="text-[24px] md:text-[28px] text-[#86868B] font-normal mt-2"
+          className="text-[24px] md:text-[28px] text-[#6E6E73] font-normal mt-2"
         >
           {t.heroSubtitle}
         </motion.p>
@@ -229,7 +229,7 @@ export default function App() {
             className="md:col-span-8 rounded-[30px] overflow-hidden relative flex flex-col items-center text-center p-8 cursor-pointer group shadow-[--shadow-apple] hover:shadow-[--shadow-apple-hover] transition-all duration-500"
           >
             <h3 className="text-[28px] font-semibold tracking-[-0.01em] mb-1">MacBook Pro</h3>
-            <p className="text-[17px] text-[#86868B] font-normal">{t.macSubtitle}</p>
+            <p className="text-[17px] text-[#6E6E73] font-normal">{t.macSubtitle}</p>
             <motion.a 
               href="https://t.me/pro_duct_uz"
               target="_blank"
@@ -373,7 +373,7 @@ export default function App() {
             className="md:col-span-4 bg-[#FAF8F5] rounded-[22px] overflow-hidden relative flex flex-col items-center text-center p-8 cursor-pointer group shadow-[--shadow-apple] hover:shadow-[--shadow-apple-hover] transition-all duration-500"
           >
             <h3 className="text-[28px] font-semibold tracking-[-0.01em] mb-1">Mac Mini</h3>
-            <p className="text-[17px] text-[#86868B] font-normal">{t.studioSubtitle}</p>
+            <p className="text-[17px] text-[#6E6E73] font-normal">{t.studioSubtitle}</p>
             <motion.a 
               href="https://t.me/pro_duct_uz"
               target="_blank"
@@ -465,7 +465,7 @@ export default function App() {
               </div>
               <div className="p-6 text-center">
                 <h3 className="text-[19px] font-semibold tracking-[-0.01em] mb-1">{item.title}</h3>
-                <p className="text-[15px] text-[#86868B]">{item.desc}</p>
+                <p className="text-[15px] text-[#6E6E73]">{item.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -487,7 +487,7 @@ export default function App() {
             className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#0071E3] to-transparent pointer-events-none"
           />
           <h2 className="text-[40px] md:text-[48px] font-semibold tracking-[-0.015em] mb-4 leading-[1.1] relative z-10">{t.helpTitle}</h2>
-          <p className="text-[19px] text-[#86868B] mb-8 max-w-lg relative z-10">
+          <p className="text-[19px] text-[#6E6E73] mb-8 max-w-lg relative z-10">
             {t.helpDesc}
           </p>
           <motion.div 
@@ -559,7 +559,7 @@ export default function App() {
                   <MapPin className="w-4 h-4 text-[#0071E3]" />
                   <span className="text-[14px] font-semibold">{t.mapTitle}</span>
                 </div>
-                <p className="text-[12px] text-[#86868B]">{t.mapDesc}</p>
+                <p className="text-[12px] text-[#6E6E73]">{t.mapDesc}</p>
                 <a 
                   href="https://yandex.com/maps/?ll=69.295475%2C41.289287&z=17&pt=69.295475,41.289287,pm2rdm" 
                   target="_blank" 
@@ -578,29 +578,29 @@ export default function App() {
             <div className="font-semibold text-[21px] tracking-[-0.02em] text-[#1D1D1F] mb-2 flex items-center gap-2">
               <img src={logo} alt="Logo" className="w-32 h-32 object-contain" />
             </div>
-            <p className="text-[13px] text-[#86868B] leading-relaxed max-w-[250px]">
+            <p className="text-[13px] text-[#6E6E73] leading-relaxed max-w-[250px]">
               {t.footerDesc}
             </p>
           </div>
           <div className="flex flex-col gap-3">
             <h4 className="text-[12px] font-semibold text-[#1D1D1F] uppercase tracking-widest mb-2">{t.footerContact}</h4>
-            <a href="tel:+998884148888" className="text-[13px] text-[#86868B] hover:text-[#1D1D1F] flex items-center gap-2 transition-colors">
+            <a href="tel:+998884148888" className="text-[13px] text-[#6E6E73] hover:text-[#1D1D1F] flex items-center gap-2 transition-colors">
               <Phone className="w-4 h-4" /> +998(88)414-88-88
             </a>
-            <a href="https://t.me/pro_duct_uz" target="_blank" className="text-[13px] text-[#86868B] hover:text-[#1D1D1F] flex items-center gap-2 transition-colors">
+            <a href="https://t.me/pro_duct_uz" target="_blank" className="text-[13px] text-[#6E6E73] hover:text-[#1D1D1F] flex items-center gap-2 transition-colors">
               <Send className="w-4 h-4" /> @pro_duct_uz
             </a>
-            <a href="https://instagram.com/pro_duct.uz" target="_blank" className="text-[13px] text-[#86868B] hover:text-[#1D1D1F] flex items-center gap-2 transition-colors">
+            <a href="https://instagram.com/pro_duct.uz" target="_blank" className="text-[13px] text-[#6E6E73] hover:text-[#1D1D1F] flex items-center gap-2 transition-colors">
               <Instagram className="w-4 h-4" /> @pro_duct.uz
             </a>
           </div>
           <div className="flex flex-col gap-3">
             <h4 className="text-[12px] font-semibold text-[#1D1D1F] uppercase tracking-widest mb-2">{t.footerAddress}</h4>
-            <div className="text-[13px] text-[#86868B] flex items-start gap-2">
+            <div className="text-[13px] text-[#6E6E73] flex items-start gap-2">
               <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
               <span>{t.footerAddressText1}<br/>{t.footerAddressText2}</span>
             </div>
-            <div className="text-[13px] text-[#86868B] flex items-center gap-2 mt-1">
+            <div className="text-[13px] text-[#6E6E73] flex items-center gap-2 mt-1">
               <Clock className="w-4 h-4" />
               <span>{t.footerTime}</span>
             </div>
@@ -609,7 +609,7 @@ export default function App() {
         
         <div className="w-full h-[1px] bg-[#D2D2D7]/50 mb-6 max-w-[1024px] mx-auto"></div>
         
-        <div className="max-w-[1024px] mx-auto w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-[12px] text-[#86868B]">
+        <div className="max-w-[1024px] mx-auto w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-[12px] text-[#6E6E73]">
           <p>{t.footerCopyright}</p>
           <div className="flex gap-6">
             <span className="hover:text-[#1D1D1F] transition-colors cursor-pointer">{t.footerPrivacy}</span>
