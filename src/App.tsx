@@ -6,11 +6,13 @@ import iph1 from './assets/images/iph1.png';
 import mac1 from './assets/images/mac1.png';
 import pad1 from './assets/images/pad1.png';
 import imac1 from './assets/images/imac1.png';
+import { translations } from './locales';
 
 export default function App() {
   const [lang, setLang] = useState("O'zbek tili");
   const [isLangOpen, setIsLangOpen] = useState(false);
   const languages = ["O'zbek tili", "Rus tili", "English", "O'zbek tili (Cyrillic)"];
+  const t = translations[lang as keyof typeof translations] || translations["O'zbek tili"];
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60, filter: 'blur(15px)' },
@@ -116,7 +118,7 @@ export default function App() {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
           className="text-[56px] md:text-[84px] font-semibold tracking-[-0.02em] mb-4 max-w-5xl leading-[1.05]"
         >
-          Professional <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#1D1D1F] to-[#86868B]">Yondashuv</span>
+          {t.heroTitle1} <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#1D1D1F] to-[#86868B]">{t.heroTitle2}</span>
         </motion.h1>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
@@ -124,7 +126,7 @@ export default function App() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-[24px] md:text-[28px] text-[#86868B] font-normal mt-2"
         >
-          Official Apple & Pro Workstations.
+          {t.heroSubtitle}
         </motion.p>
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -138,7 +140,7 @@ export default function App() {
             href="#apple" 
             className="bg-[#0071E3] text-white text-[17px] font-medium px-8 py-3 rounded-full shadow-lg shadow-[#0071E3]/20 hover:bg-[#0077ED] transition-colors"
           >
-            Apple
+            {t.btnApple}
           </motion.a>
           <motion.a 
             whileHover={{ scale: 1.05 }}
@@ -146,7 +148,7 @@ export default function App() {
             href="#pc" 
             className="bg-[#F5F5F7] text-[#1D1D1F] text-[17px] font-medium px-8 py-3 rounded-full hover:bg-[#E8E8ED] transition-colors"
           >
-            PC kompyuterlar
+            {t.btnPc}
           </motion.a>
         </motion.div>
       </section>
@@ -161,10 +163,10 @@ export default function App() {
           className="grid grid-cols-2 md:grid-cols-4 gap-4"
         >
           {[
-            { Icon: BadgeCheck, text: "100% Rasmiy Mahsulotlar" },
-            { Icon: ShieldCheck, text: "Rasmiy Kafolat" },
-            { Icon: Truck, text: "Toshkent bo'ylab tezkor yetkazib berish" },
-            { Icon: Wrench, text: "Professional maslahat va yig'ib berish" }
+            { Icon: BadgeCheck, text: t.feature1 },
+            { Icon: ShieldCheck, text: t.feature2 },
+            { Icon: Truck, text: t.feature3 },
+            { Icon: Wrench, text: t.feature4 }
           ].map((item, index) => (
             <motion.div 
               key={index}
@@ -184,7 +186,7 @@ export default function App() {
           {...fadeInUp}
           className="text-[40px] font-semibold tracking-[-0.015em] text-center mb-10"
         >
-          Apple Ekosistemasi
+          {t.appleTitle}
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[450px] md:auto-rows-[550px]">
           
@@ -198,7 +200,7 @@ export default function App() {
             className="md:col-span-8 rounded-[30px] overflow-hidden relative flex flex-col items-center text-center p-8 cursor-pointer group shadow-[--shadow-apple] hover:shadow-[--shadow-apple-hover] transition-all duration-500"
           >
             <h3 className="text-[28px] font-semibold tracking-[-0.01em] mb-1">MacBook Pro</h3>
-            <p className="text-[17px] text-[#86868B] font-normal">Aqlbovar qilmas kuch.</p>
+            <p className="text-[17px] text-[#86868B] font-normal">{t.macSubtitle}</p>
             <motion.a 
               href="https://t.me/pro_duct_uz"
               target="_blank"
@@ -206,7 +208,7 @@ export default function App() {
               whileTap={{ scale: 0.95 }}
               className="mt-6 mb-20 px-10 py-2.5 bg-[#1D1D1F] text-white text-[15px] font-semibold rounded-full shadow-lg flex items-center justify-center group-hover:bg-[#0071E3] transition-colors"
             >
-              Batafsil
+              {t.btnDetails}
             </motion.a>
             <div className="absolute bottom-10 w-full h-[65%] flex justify-center items-end">
               <motion.img 
@@ -238,7 +240,7 @@ export default function App() {
               whileTap={{ scale: 0.95 }}
               className="mt-6 mb-20 px-10 py-2.5 bg-white text-[#1D1D1F] text-[15px] font-semibold rounded-full shadow-lg flex items-center justify-center hover:bg-[#F5F5F7] transition-colors"
             >
-              Batafsil
+              {t.btnDetails}
             </motion.a>
             <div className="absolute bottom-0 w-full h-[65%] flex justify-center items-end">
               <motion.img 
@@ -262,7 +264,7 @@ export default function App() {
             className="md:col-span-6 rounded-[30px] overflow-hidden relative flex flex-col items-center text-center p-8 cursor-pointer group shadow-[--shadow-apple] hover:shadow-[--shadow-apple-hover] transition-all duration-500"
           >
             <h3 className="text-[28px] font-semibold tracking-[-0.01em] mb-1 text-white">iPad Pro</h3>
-            <p className="text-[17px] text-white/70 font-normal">Yengil. Kuchli.</p>
+            <p className="text-[17px] text-white/70 font-normal">{t.ipadSubtitle}</p>
             <motion.a 
               href="https://t.me/pro_duct_uz"
               target="_blank"
@@ -270,7 +272,7 @@ export default function App() {
               whileTap={{ scale: 0.95 }}
               className="mt-6 mb-20 px-10 py-2.5 bg-white text-[#1D1D1F] text-[15px] font-semibold rounded-full shadow-lg flex items-center justify-center hover:bg-[#F5F5F7] transition-colors"
             >
-              Batafsil
+              {t.btnDetails}
             </motion.a>
             <div className="absolute bottom-6 w-full h-[60%] flex justify-center items-end">
               <motion.img 
@@ -293,8 +295,8 @@ export default function App() {
             }}
             className="md:col-span-6 rounded-[30px] overflow-hidden relative flex flex-col items-center text-center p-8 cursor-pointer group shadow-[--shadow-apple] hover:shadow-[--shadow-apple-hover] transition-all duration-500"
           >
-            <h3 className="text-[28px] font-semibold tracking-[-0.01em] mb-1 text-white">iMac oilasi</h3>
-            <p className="text-[17px] text-white/80 font-normal">Yuqori samaradorlik</p>
+            <h3 className="text-[28px] font-semibold tracking-[-0.01em] mb-1 text-white">{t.imacTitle}</h3>
+            <p className="text-[17px] text-white/80 font-normal">{t.imacSubtitle}</p>
             <motion.a 
               href="https://t.me/pro_duct_uz"
               target="_blank"
@@ -302,7 +304,7 @@ export default function App() {
               whileTap={{ scale: 0.95 }}
               className="mt-6 mb-20 px-10 py-2.5 bg-[#1D1D1F] text-white text-[15px] font-semibold rounded-full shadow-lg flex items-center justify-center group-hover:bg-[#0071E3] transition-colors"
             >
-              Batafsil
+              {t.btnDetails}
             </motion.a>
             <div className="absolute bottom-6 w-full h-[60%] flex justify-center items-end">
               <motion.img 
@@ -325,7 +327,7 @@ export default function App() {
           {...fadeInUp}
           className="text-[40px] font-semibold tracking-[-0.015em] text-center mb-10"
         >
-          Professional PC
+          {t.pcTitle}
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[450px] md:auto-rows-[550px]">
           
@@ -336,7 +338,7 @@ export default function App() {
             className="md:col-span-4 bg-[#F5F5F7] rounded-[22px] overflow-hidden relative flex flex-col items-center text-center p-8 cursor-pointer group shadow-[--shadow-apple] hover:shadow-[--shadow-apple-hover] transition-all duration-500"
           >
             <h3 className="text-[28px] font-semibold tracking-[-0.01em] mb-1">Pro Studio</h3>
-            <p className="text-[17px] text-[#86868B] font-normal">Cheksiz imkoniyat.</p>
+            <p className="text-[17px] text-[#86868B] font-normal">{t.studioSubtitle}</p>
             <motion.a 
               href="https://t.me/pro_duct_uz"
               target="_blank"
@@ -344,7 +346,7 @@ export default function App() {
               whileTap={{ scale: 0.95 }}
               className="mt-6 mb-20 px-10 py-2.5 bg-[#1D1D1F] text-white text-[15px] font-semibold rounded-full shadow-lg flex items-center justify-center group-hover:bg-[#0071E3] transition-colors"
             >
-              Batafsil
+              {t.btnDetails}
             </motion.a>
             <div className="absolute bottom-0 w-full h-[60%] flex justify-center items-end">
               <motion.img 
@@ -365,7 +367,7 @@ export default function App() {
             className="md:col-span-8 bg-[#F5F5F7] rounded-[22px] overflow-hidden relative flex flex-col items-center text-center p-8 cursor-pointer group shadow-[--shadow-apple] hover:shadow-[--shadow-apple-hover] transition-all duration-500"
           >
             <h3 className="text-[28px] font-semibold tracking-[-0.01em] mb-1">Workstation</h3>
-            <p className="text-[17px] text-[#86868B] font-normal">Arxitektor va 3D dizaynerlar uchun.</p>
+            <p className="text-[17px] text-[#86868B] font-normal">{t.workstationSubtitle}</p>
             <motion.a 
               href="https://t.me/pro_duct_uz"
               target="_blank"
@@ -373,7 +375,7 @@ export default function App() {
               whileTap={{ scale: 0.95 }}
               className="mt-6 mb-32 md:mb-20 px-10 py-2.5 bg-[#1D1D1F] text-white text-[15px] font-semibold rounded-full shadow-lg flex items-center justify-center group-hover:bg-[#0071E3] transition-colors"
             >
-              Batafsil
+              {t.btnDetails}
             </motion.a>
             <div className="absolute bottom-0 w-full h-[65%] flex justify-center items-end">
               <motion.img 
@@ -396,13 +398,13 @@ export default function App() {
           {...fadeInUp}
           className="text-[40px] font-semibold tracking-[-0.015em] text-center mb-10"
         >
-          Kimlar uchun?
+          {t.audienceTitle}
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { title: "Dasturchilar va IT", desc: "Kod yozish va murakkab hisoblashlar uchun ishonchli tizimlar.", img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" },
-            { title: "Dizayner va Kreatorlar", desc: "Aniq ranglar va yuqori render tezligi talab qiluvchilar uchun.", img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" },
-            { title: "Biznes va Menejment", desc: "Premium ko'rinish va barqaror ishlashni qadrlovchilar uchun.", img: "https://images.unsplash.com/photo-1664575602276-acd073f104c1?auto=format&fit=crop&w=600&q=80" }
+            { title: t.audience1Title, desc: t.audience1Desc, img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" },
+            { title: t.audience2Title, desc: t.audience2Desc, img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" },
+            { title: t.audience3Title, desc: t.audience3Desc, img: "https://images.unsplash.com/photo-1664575602276-acd073f104c1?auto=format&fit=crop&w=600&q=80" }
           ].map((item, index) => (
             <motion.div 
               key={index}
@@ -443,9 +445,9 @@ export default function App() {
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
             className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#0071E3] to-transparent pointer-events-none"
           />
-          <h2 className="text-[40px] md:text-[48px] font-semibold tracking-[-0.015em] mb-4 leading-[1.1] relative z-10">Yordam kerakmi?</h2>
+          <h2 className="text-[40px] md:text-[48px] font-semibold tracking-[-0.015em] mb-4 leading-[1.1] relative z-10">{t.helpTitle}</h2>
           <p className="text-[19px] text-[#86868B] mb-8 max-w-lg relative z-10">
-            O'zingizga mos qurilmani tanlashda yordam beramiz. Mutaxassislarimiz bilan bog'laning.
+            {t.helpDesc}
           </p>
           <motion.div 
             initial="initial"
@@ -478,7 +480,7 @@ export default function App() {
               href="tel:+998884148888" 
               className="bg-[#1D1D1F] text-white text-[17px] font-normal px-8 py-3.5 rounded-full shadow-[--shadow-apple] hover:shadow-[--shadow-apple-hover] transition-all flex items-center justify-center gap-2"
             >
-              <Phone className="w-5 h-5" /> Qo'ng'iroq qilish
+              <Phone className="w-5 h-5" /> {t.btnCall}
             </motion.a>
             <motion.a 
               whileHover={{ scale: 1.05, y: -2 }}
@@ -487,7 +489,7 @@ export default function App() {
               target="_blank"
               className="bg-[#0071E3] text-white text-[17px] font-normal px-8 py-3.5 rounded-full shadow-[--shadow-apple] hover:shadow-[--shadow-apple-hover] transition-all flex items-center justify-center gap-2"
             >
-              <Send className="w-5 h-5" /> Telegramdan yozish
+              <Send className="w-5 h-5" /> {t.btnTelegram}
             </motion.a>
           </div>
         </motion.div>
@@ -512,16 +514,16 @@ export default function App() {
               <div className="bg-white/80 backdrop-blur-md px-4 py-3 rounded-2xl border border-[#D2D2D7]/50 shadow-[--shadow-apple]">
                 <div className="flex items-center gap-2 mb-1">
                   <MapPin className="w-4 h-4 text-[#0071E3]" />
-                  <span className="text-[14px] font-semibold">Bizning manzil</span>
+                  <span className="text-[14px] font-semibold">{t.mapTitle}</span>
                 </div>
-                <p className="text-[12px] text-[#86868B]">Toshkent, Mirobod tumani</p>
+                <p className="text-[12px] text-[#86868B]">{t.mapDesc}</p>
                 <a 
                   href="https://yandex.com/maps/?ll=69.295475%2C41.289287&z=17&pt=69.295475,41.289287,pm2rdm" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-[12px] text-[#0071E3] mt-2 flex items-center gap-1 hover:underline"
                 >
-                  Yandex xaritada ochish <ExternalLink className="w-3 h-3" />
+                  {t.mapLink} <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
             </div>
@@ -534,11 +536,11 @@ export default function App() {
               <img src={logo} alt="Logo" className="w-32 h-32 object-contain" />
             </div>
             <p className="text-[13px] text-[#86868B] leading-relaxed max-w-[250px]">
-              Official Apple va Professional PC kompyuterlari savdosi. Sifat va ishonch kafolati.
+              {t.footerDesc}
             </p>
           </div>
           <div className="flex flex-col gap-3">
-            <h4 className="text-[12px] font-semibold text-[#1D1D1F] uppercase tracking-widest mb-2">Aloqa</h4>
+            <h4 className="text-[12px] font-semibold text-[#1D1D1F] uppercase tracking-widest mb-2">{t.footerContact}</h4>
             <a href="tel:+998884148888" className="text-[13px] text-[#86868B] hover:text-[#1D1D1F] flex items-center gap-2 transition-colors">
               <Phone className="w-4 h-4" /> +998(88)414-88-88
             </a>
@@ -550,14 +552,14 @@ export default function App() {
             </a>
           </div>
           <div className="flex flex-col gap-3">
-            <h4 className="text-[12px] font-semibold text-[#1D1D1F] uppercase tracking-widest mb-2">Manzil</h4>
+            <h4 className="text-[12px] font-semibold text-[#1D1D1F] uppercase tracking-widest mb-2">{t.footerAddress}</h4>
             <div className="text-[13px] text-[#86868B] flex items-start gap-2">
               <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-              <span>O'zbekiston, Toshkent shahar,<br/>Mirobod tumani</span>
+              <span>{t.footerAddressText1}<br/>{t.footerAddressText2}</span>
             </div>
             <div className="text-[13px] text-[#86868B] flex items-center gap-2 mt-1">
               <Clock className="w-4 h-4" />
-              <span>Du-Yak: 10:00 - 21:00</span>
+              <span>{t.footerTime}</span>
             </div>
           </div>
         </div>
@@ -565,10 +567,10 @@ export default function App() {
         <div className="w-full h-[1px] bg-[#D2D2D7]/50 mb-6 max-w-[1024px] mx-auto"></div>
         
         <div className="max-w-[1024px] mx-auto w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-[12px] text-[#86868B]">
-          <p>&copy; 2026 ProDuct. Barcha huquqlar himoyalangan.</p>
+          <p>{t.footerCopyright}</p>
           <div className="flex gap-6">
-            <span className="hover:text-[#1D1D1F] transition-colors cursor-pointer">Maxfiylik siyosati</span>
-            <span className="hover:text-[#1D1D1F] transition-colors cursor-pointer">Foydalanish shartlari</span>
+            <span className="hover:text-[#1D1D1F] transition-colors cursor-pointer">{t.footerPrivacy}</span>
+            <span className="hover:text-[#1D1D1F] transition-colors cursor-pointer">{t.footerTerms}</span>
           </div>
         </div>
       </footer>
