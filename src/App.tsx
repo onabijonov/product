@@ -8,6 +8,9 @@ import pad1 from './assets/images/pad1.webp';
 import imac1 from './assets/images/imac1.webp';
 import mini from './assets/images/mini.webp';
 import pc from './assets/images/pc.webp';
+import itImg from './assets/images/it.webp';
+import designImg from './assets/images/design.webp';
+import businessImg from './assets/images/business.webp';
 import { translations } from './locales';
 
 export default function App() {
@@ -397,13 +400,13 @@ export default function App() {
             >
               {t.btnDetails}
             </motion.a>
-            <div className="absolute bottom-0 w-full h-[60%] md:h-[70%] flex justify-center items-end">
+            <div className="absolute bottom-4 w-full h-[50%] md:h-[60%] flex justify-center items-end">
                 <motion.img 
                   whileHover={{ scale: 1.05 }}
                   transition={springConfig}
                   src={pc} 
                   alt="Clean Workstation" 
-                  className="w-[90%] h-full object-contain object-bottom" 
+                  className="w-[75%] h-full object-contain object-bottom" 
                   referrerPolicy="no-referrer" 
                   loading="lazy"
                 />
@@ -423,9 +426,9 @@ export default function App() {
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { title: t.audience1Title, desc: t.audience1Desc, img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80&fm=webp" },
-            { title: t.audience2Title, desc: t.audience2Desc, img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80&fm=webp" },
-            { title: t.audience3Title, desc: t.audience3Desc, img: "https://images.unsplash.com/photo-1664575602276-acd073f104c1?auto=format&fit=crop&w=600&q=80&fm=webp" }
+            { title: t.audience1Title, desc: t.audience1Desc, img: itImg },
+            { title: t.audience2Title, desc: t.audience2Desc, img: designImg },
+            { title: t.audience3Title, desc: t.audience3Desc, img: businessImg }
           ].map((item, index) => (
             <motion.div 
               key={index}
