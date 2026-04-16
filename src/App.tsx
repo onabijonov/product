@@ -21,10 +21,10 @@ export default function App() {
   }, [lang, contentControls]);
 
   const fadeInUp = {
-    initial: { opacity: 0, y: 40 },
+    initial: { opacity: 0, y: 10 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: "-30px" },
-    transition: { duration: 1.0, ease: [0.16, 1, 0.3, 1] }
+    viewport: { once: true, margin: "-10px" },
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
   };
 
   const springConfig = { type: 'spring', damping: 30, stiffness: 80, mass: 1.2 };
