@@ -192,10 +192,10 @@ export default function App() {
       </section>
 
       {/* Main Showcase - Apple */}
-      <section id="apple" className="w-full max-w-[920px] mx-auto px-4 md:px-0 pb-20 pt-10">
+      <section id="apple" className="w-full max-w-[920px] mx-auto px-4 md:px-0 pb-12 md:pb-20 pt-8 md:pt-10">
         <motion.h2 
           {...fadeInUp}
-          className="text-[40px] font-semibold tracking-[-0.015em] text-center mb-10"
+          className="text-[32px] md:text-[40px] font-semibold tracking-[-0.015em] text-center mb-8 md:mb-10"
         >
           {t.appleTitle}
         </motion.h2>
@@ -337,10 +337,10 @@ export default function App() {
       </section>
 
       {/* Main Showcase - PC */}
-      <section id="pc" className="w-full max-w-[920px] mx-auto px-4 md:px-0 pb-24 pt-10">
+      <section id="pc" className="w-full max-w-[920px] mx-auto px-4 md:px-0 pb-12 md:pb-24 pt-8 md:pt-10">
         <motion.h2 
           {...fadeInUp}
-          className="text-[40px] font-semibold tracking-[-0.015em] text-center mb-10"
+          className="text-[32px] md:text-[40px] font-semibold tracking-[-0.015em] text-center mb-8 md:mb-10"
         >
           {t.pcTitle}
         </motion.h2>
@@ -410,10 +410,10 @@ export default function App() {
       </section>
 
       {/* Target Audience */}
-      <section className="w-full max-w-[920px] mx-auto px-4 md:px-0 pb-24 pt-10">
+      <section className="w-full max-w-[920px] mx-auto px-4 md:px-0 pb-12 md:pb-24 pt-8 md:pt-10">
         <motion.h2 
           {...fadeInUp}
-          className="text-[40px] font-semibold tracking-[-0.015em] text-center mb-10"
+          className="text-[32px] md:text-[40px] font-semibold tracking-[-0.015em] text-center mb-8 md:mb-10"
         >
           {t.audienceTitle}
         </motion.h2>
