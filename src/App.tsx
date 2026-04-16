@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { ChevronRight, ShieldCheck, Truck, Wrench, BadgeCheck, Phone, Send, Instagram, MapPin, Clock, ExternalLink, Globe, ChevronDown } from 'lucide-react';
 import { motion, useAnimation } from 'motion/react';
 import logo from './assets/logo.svg';
-import iph1 from './assets/images/iph1.png';
-import mac1 from './assets/images/mac1.png';
-import pad1 from './assets/images/pad1.png';
-import imac1 from './assets/images/imac1.png';
+import iph1 from './assets/images/iph1.webp';
+import mac1 from './assets/images/mac1.webp';
+import pad1 from './assets/images/pad1.webp';
+import imac1 from './assets/images/imac1.webp';
 import { translations } from './locales';
 
 export default function App() {
