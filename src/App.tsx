@@ -6,6 +6,7 @@ import iph1 from './assets/images/iph1.webp';
 import mac1 from './assets/images/mac1.webp';
 import pad1 from './assets/images/pad1.webp';
 import imac1 from './assets/images/imac1.webp';
+import mini from './assets/images/mini.webp';
 import { translations } from './locales';
 
 export default function App() {
@@ -349,9 +350,9 @@ export default function App() {
           <motion.div 
             {...fadeInUp}
             whileHover={{ y: -10 }}
-            className="md:col-span-4 bg-[#F5F5F7] rounded-[22px] overflow-hidden relative flex flex-col items-center text-center p-8 cursor-pointer group shadow-[--shadow-apple] hover:shadow-[--shadow-apple-hover] transition-all duration-500"
+            className="md:col-span-4 bg-[#FAF8F5] rounded-[22px] overflow-hidden relative flex flex-col items-center text-center p-8 cursor-pointer group shadow-[--shadow-apple] hover:shadow-[--shadow-apple-hover] transition-all duration-500"
           >
-            <h3 className="text-[28px] font-semibold tracking-[-0.01em] mb-1">Pro Studio</h3>
+            <h3 className="text-[28px] font-semibold tracking-[-0.01em] mb-1">Mac Mini</h3>
             <p className="text-[17px] text-[#86868B] font-normal">{t.studioSubtitle}</p>
             <motion.a 
               href="https://t.me/pro_duct_uz"
@@ -362,13 +363,13 @@ export default function App() {
             >
               {t.btnDetails}
             </motion.a>
-            <div className="absolute bottom-0 w-full h-[55%] md:h-[60%] flex justify-center items-end">
+            <div className="absolute bottom-6 w-full h-[55%] md:h-[60%] flex justify-center items-end">
                 <motion.img 
                   whileHover={{ scale: 1.1 }}
                   transition={springConfig}
-                  src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=600&q=80&fm=webp" 
-                  alt="Pro PC Setup" 
-                  className="w-[80%] h-full object-cover object-top rounded-t-3xl" 
+                  src={mini} 
+                  alt="Mac Mini Setup" 
+                  className="w-[85%] h-full object-contain object-bottom" 
                   referrerPolicy="no-referrer" 
                   loading="lazy"
                 />
