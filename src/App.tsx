@@ -7,6 +7,7 @@ import mac1 from './assets/images/mac1.webp';
 import pad1 from './assets/images/pad1.webp';
 import imac1 from './assets/images/imac1.webp';
 import mini from './assets/images/mini.webp';
+import pc from './assets/images/pc.webp';
 import { translations } from './locales';
 
 export default function App() {
@@ -380,26 +381,29 @@ export default function App() {
           <motion.div 
             {...fadeInUp}
             whileHover={{ y: -10 }}
-            className="md:col-span-8 bg-[#F5F5F7] rounded-[22px] overflow-hidden relative flex flex-col items-center text-center p-8 cursor-pointer group shadow-[--shadow-apple] hover:shadow-[--shadow-apple-hover] transition-all duration-500"
+            style={{ 
+              background: 'linear-gradient(63.85deg, #2B1111 28.18%, #D50A0A 172.31%)'
+            }}
+            className="md:col-span-8 rounded-[30px] overflow-hidden relative flex flex-col items-center text-center p-8 cursor-pointer group shadow-[--shadow-apple] hover:shadow-[--shadow-apple-hover] transition-all duration-500"
           >
-            <h3 className="text-[28px] font-semibold tracking-[-0.01em] mb-1">Workstation</h3>
-            <p className="text-[17px] text-[#86868B] font-normal">{t.workstationSubtitle}</p>
+            <h3 className="text-[28px] font-semibold tracking-[-0.01em] mb-1 text-white">Workstation</h3>
+            <p className="text-[17px] text-white/70 font-normal">{t.workstationSubtitle}</p>
             <motion.a 
               href="https://t.me/pro_duct_uz"
               target="_blank"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="relative z-10 mt-6 mb-32 md:mb-20 px-10 py-2.5 bg-[#1D1D1F] text-white text-[15px] font-semibold rounded-full shadow-lg flex items-center justify-center group-hover:bg-[#0071E3] transition-colors"
+              className="relative z-10 mt-6 mb-32 md:mb-20 px-10 py-2.5 bg-white text-[#1D1D1F] text-[15px] font-semibold rounded-full shadow-lg flex items-center justify-center hover:bg-[#F5F5F7] transition-colors"
             >
               {t.btnDetails}
             </motion.a>
-            <div className="absolute bottom-0 w-full h-[55%] md:h-[65%] flex justify-center items-end">
+            <div className="absolute bottom-0 w-full h-[60%] md:h-[70%] flex justify-center items-end">
                 <motion.img 
                   whileHover={{ scale: 1.05 }}
                   transition={springConfig}
-                  src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1000&q=80&fm=webp" 
+                  src={pc} 
                   alt="Clean Workstation" 
-                  className="w-[85%] h-full object-cover object-top rounded-t-3xl" 
+                  className="w-[90%] h-full object-contain object-bottom" 
                   referrerPolicy="no-referrer" 
                   loading="lazy"
                 />
