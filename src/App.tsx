@@ -1,5 +1,5 @@
-import React from 'react';
-import { ChevronRight, ShieldCheck, Truck, Wrench, BadgeCheck, Phone, Send, Instagram, MapPin, Clock, ExternalLink } from 'lucide-react';
+import React, { useState } from 'react';
+import { ChevronRight, ShieldCheck, Truck, Wrench, BadgeCheck, Phone, Send, Instagram, MapPin, Clock, ExternalLink, Globe, ChevronDown } from 'lucide-react';
 import { motion } from 'motion/react';
 import logo from './assets/logo.svg';
 import iph1 from './assets/images/iph1.png';
@@ -8,6 +8,10 @@ import pad1 from './assets/images/pad1.png';
 import imac1 from './assets/images/imac1.png';
 
 export default function App() {
+  const [lang, setLang] = useState("O'zbek tili");
+  const [isLangOpen, setIsLangOpen] = useState(false);
+  const languages = ["O'zbek tili", "Rus tili", "English", "O'zbek tili (Cyrillic)"];
+
   const fadeInUp = {
     initial: { opacity: 0, y: 60, filter: 'blur(15px)' },
     whileInView: { opacity: 1, y: 0, filter: 'blur(0px)' },
@@ -41,7 +45,7 @@ export default function App() {
         transition={{ type: 'spring', damping: 25, stiffness: 120, delay: 0.2 }}
         className="w-full bg-[#FFFFFF]/70 backdrop-blur-xl border-b border-[#D2D2D7]/30 sticky top-0 z-[100] transition-all duration-300"
       >
-        <header className="w-full h-16 px-4 md:px-16 flex justify-between items-center max-w-[1024px] mx-auto overflow-hidden">
+        <header className="w-full h-16 px-4 md:px-16 flex justify-between items-center max-w-[1024px] mx-auto relative">
           <div className="flex items-center cursor-pointer">
             <motion.div 
               whileHover={{ scale: 1.05 }}
@@ -57,14 +61,50 @@ export default function App() {
               <img src={logo} alt="ProDuct Logo" className="w-full h-full object-contain" />
             </motion.div>
           </div>
-          <motion.a 
-            href="tel:+998884148888"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="text-[13px] font-semibold text-white px-5 py-2 bg-[#0071E3] rounded-full border border-white/20 flex items-center gap-2 hover:bg-[#0077ED] transition-all"
-          >
-            <Phone className="w-3.5 h-3.5" /> (88) 414-88-88
-          </motion.a>
+          <div className="flex items-center gap-2 md:gap-4">
+            {/* Language Selector */}
+            <div className="relative">
+              <button 
+                onClick={() => setIsLangOpen(!isLangOpen)}
+                className="text-[13px] font-semibold text-[#1D1D1F] px-3 py-2 bg-transparent hover:bg-[#F5F5F7] rounded-full transition-colors flex items-center gap-1.5"
+              >
+                <Globe className="w-4 h-4 text-[#0071E3]" />
+                <span className="hidden sm:inline">{lang}</span>
+                <ChevronDown className={`w-3 h-3 transition-transform ${isLangOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {isLangOpen && (
+                <>
+                  <div className="fixed inset-0 z-40" onClick={() => setIsLangOpen(false)}></div>
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    className="absolute right-0 top-full mt-2 w-48 bg-white/90 backdrop-blur-xl border border-[#D2D2D7]/50 rounded-[18px] shadow-[--shadow-apple] overflow-hidden py-2 z-50 origin-top-right"
+                  >
+                    {languages.map((l) => (
+                      <button
+                        key={l}
+                        onClick={() => { setLang(l); setIsLangOpen(false); }}
+                        className={`w-full text-left px-4 py-2.5 text-[13px] transition-colors flex items-center justify-between ${lang === l ? 'text-[#0071E3] font-semibold bg-[#F5F5F7]' : 'text-[#1D1D1F] hover:bg-[#F5F5F7]'}`}
+                      >
+                        {l}
+                        {lang === l && <div className="w-1.5 h-1.5 rounded-full bg-[#0071E3]"></div>}
+                      </button>
+                    ))}
+                  </motion.div>
+                </>
+              )}
+            </div>
+
+            <motion.a 
+              href="tel:+998884148888"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="text-[13px] font-semibold text-white px-5 py-2 bg-[#0071E3] rounded-full border border-white/20 flex items-center gap-2 hover:bg-[#0077ED] transition-all"
+            >
+              <Phone className="w-3.5 h-3.5" /> <span className="hidden sm:inline">(88) 414-88-88</span>
+            </motion.a>
+          </div>
         </header>
       </motion.div>
 
