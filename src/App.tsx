@@ -547,6 +547,7 @@ export default function App() {
               height="100%" 
               frameBorder="0" 
               allowFullScreen={true}
+              loading="lazy"
               className="grayscale-[0.2] contrast-[1.1] brightness-[0.95] group-hover:grayscale-0 transition-all duration-700"
             ></iframe>
             <div className="absolute top-6 left-6 z-10">
