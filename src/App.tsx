@@ -363,13 +363,13 @@ export default function App() {
             >
               {t.btnDetails}
             </motion.a>
-            <div className="absolute bottom-6 w-full h-[55%] md:h-[60%] flex justify-center items-end">
+            <div className="absolute top-[55%] md:top-[50%] left-0 w-full h-[40%] flex justify-center items-center">
                 <motion.img 
                   whileHover={{ scale: 1.1 }}
                   transition={springConfig}
                   src={mini} 
                   alt="Mac Mini Setup" 
-                  className="w-[85%] h-full object-contain object-bottom" 
+                  className="w-[85%] h-full object-contain" 
                   referrerPolicy="no-referrer" 
                   loading="lazy"
                 />
