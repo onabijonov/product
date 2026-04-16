@@ -62,8 +62,8 @@ export default function App() {
         transition={{ type: 'spring', damping: 25, stiffness: 120, delay: 0.2 }}
         className="w-full bg-[#FFFFFF]/70 backdrop-blur-xl border-b border-[#D2D2D7]/30 sticky top-0 z-[100] transition-all duration-300"
       >
-        <header className="w-full h-16 px-4 md:px-16 flex justify-between items-center max-w-[1024px] mx-auto relative">
-          <div className="flex items-center cursor-pointer">
+        <header className="w-full h-16 px-4 md:px-16 flex justify-between items-center max-w-[1024px] mx-auto relative content-center">
+          <div className="flex items-center cursor-pointer min-w-[96px] min-h-[40px]">
             <motion.div 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -75,7 +75,14 @@ export default function App() {
               }}
               className="w-24 h-24 flex items-center justify-center pt-2"
             >
-              <img src={logo} alt="ProDuct Logo" className="w-full h-full object-contain" fetchPriority="high" />
+              <img 
+                src={logo} 
+                alt="ProDuct Logo" 
+                width="96" 
+                height="40" 
+                className="w-full h-full object-contain" 
+                fetchPriority="high" 
+              />
             </motion.div>
           </div>
           <div className="flex items-center gap-2 md:gap-4">
@@ -230,12 +237,14 @@ export default function App() {
             >
               {t.btnDetails}
             </motion.a>
-            <div className="absolute bottom-10 w-full h-[65%] flex justify-center items-end">
+            <div className="absolute bottom-10 w-full h-[65%] flex justify-center items-end overflow-hidden">
               <motion.img 
                 whileHover={{ scale: 1.05 }}
                 transition={springConfig}
                 src={mac1} 
                 alt="Apple MacBook" 
+                width="400"
+                height="300"
                 className="w-[85%] h-full object-contain object-bottom" 
                 referrerPolicy="no-referrer" 
                 fetchPriority="high"
