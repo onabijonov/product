@@ -127,7 +127,7 @@ export default function App() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-          className="text-[56px] md:text-[84px] font-semibold tracking-[-0.02em] mb-4 max-w-5xl leading-[1.05]"
+          className="text-[40px] sm:text-[48px] md:text-[64px] lg:text-[84px] font-semibold tracking-[-0.02em] mb-4 max-w-5xl leading-[1.1] md:leading-[1.05] break-words hyphens-auto"
         >
           {t.heroTitle1} <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#1D1D1F] to-[#86868B]">{t.heroTitle2}</span>
         </motion.h1>
