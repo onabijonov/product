@@ -21,10 +21,10 @@ export default function App() {
   }, [lang, contentControls]);
 
   const fadeInUp = {
-    initial: { opacity: 0, y: 60, filter: 'blur(15px)' },
-    whileInView: { opacity: 1, y: 0, filter: 'blur(0px)' },
-    viewport: { once: true, margin: "-50px" },
-    transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] }
+    initial: { opacity: 0, y: 40 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, margin: "-30px" },
+    transition: { duration: 1.0, ease: [0.16, 1, 0.3, 1] }
   };
 
   const springConfig = { type: 'spring', damping: 30, stiffness: 80, mass: 1.2 };
@@ -39,7 +39,7 @@ export default function App() {
   };
 
   const fadeIn = {
-    initial: { opacity: 0, y: 30 },
+    initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
   };
@@ -66,7 +66,7 @@ export default function App() {
               }}
               className="w-24 h-24 flex items-center justify-center pt-2"
             >
-              <img src={logo} alt="ProDuct Logo" className="w-full h-full object-contain" />
+              <img src={logo} alt="ProDuct Logo" className="w-full h-full object-contain" fetchPriority="high" />
             </motion.div>
           </div>
           <div className="flex items-center gap-2 md:gap-4">
@@ -124,8 +124,8 @@ export default function App() {
         {/* Hero Section */}
       <section className="w-full pt-20 pb-16 flex flex-col items-center text-center px-6 overflow-x-hidden">
         <motion.h1 
-          initial={{ opacity: 0, scale: 0.95, filter: 'blur(20px)' }}
-          animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
           className="text-[56px] md:text-[84px] font-semibold tracking-[-0.02em] mb-4 max-w-5xl leading-[1.05]"
         >
@@ -229,6 +229,7 @@ export default function App() {
                 alt="Apple MacBook" 
                 className="w-[85%] h-full object-contain object-bottom" 
                 referrerPolicy="no-referrer" 
+                fetchPriority="high"
               />
             </div>
           </motion.div>
@@ -261,6 +262,7 @@ export default function App() {
                 alt="iPhone 17 Pro" 
                 className="w-[85%] h-full object-contain object-bottom" 
                 referrerPolicy="no-referrer" 
+                fetchPriority="high"
               />
             </div>
           </motion.div>
@@ -293,6 +295,7 @@ export default function App() {
                 alt="iPad Pro" 
                 className="w-[85%] h-full object-contain object-bottom" 
                 referrerPolicy="no-referrer" 
+                loading="lazy"
               />
             </div>
           </motion.div>
@@ -325,6 +328,7 @@ export default function App() {
                 alt="iMac Family" 
                 className="w-[85%] h-full object-contain object-bottom" 
                 referrerPolicy="no-referrer" 
+                loading="lazy"
               />
             </div>
           </motion.div>
@@ -360,14 +364,15 @@ export default function App() {
               {t.btnDetails}
             </motion.a>
             <div className="absolute bottom-0 w-full h-[60%] flex justify-center items-end">
-              <motion.img 
-                whileHover={{ scale: 1.1 }}
-                transition={springConfig}
-                src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=600&q=80" 
-                alt="Pro PC Setup" 
-                className="w-[80%] h-full object-cover object-top rounded-t-3xl" 
-                referrerPolicy="no-referrer" 
-              />
+                <motion.img 
+                  whileHover={{ scale: 1.1 }}
+                  transition={springConfig}
+                  src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=600&q=80&fm=webp" 
+                  alt="Pro PC Setup" 
+                  className="w-[80%] h-full object-cover object-top rounded-t-3xl" 
+                  referrerPolicy="no-referrer" 
+                  loading="lazy"
+                />
             </div>
           </motion.div>
 
@@ -389,14 +394,15 @@ export default function App() {
               {t.btnDetails}
             </motion.a>
             <div className="absolute bottom-0 w-full h-[65%] flex justify-center items-end">
-              <motion.img 
-                whileHover={{ scale: 1.05 }}
-                transition={springConfig}
-                src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1000&q=80" 
-                alt="Clean Workstation" 
-                className="w-[85%] h-full object-cover object-top rounded-t-3xl" 
-                referrerPolicy="no-referrer" 
-              />
+                <motion.img 
+                  whileHover={{ scale: 1.05 }}
+                  transition={springConfig}
+                  src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1000&q=80&fm=webp" 
+                  alt="Clean Workstation" 
+                  className="w-[85%] h-full object-cover object-top rounded-t-3xl" 
+                  referrerPolicy="no-referrer" 
+                  loading="lazy"
+                />
             </div>
           </motion.div>
 
@@ -413,9 +419,9 @@ export default function App() {
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { title: t.audience1Title, desc: t.audience1Desc, img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" },
-            { title: t.audience2Title, desc: t.audience2Desc, img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80" },
-            { title: t.audience3Title, desc: t.audience3Desc, img: "https://images.unsplash.com/photo-1664575602276-acd073f104c1?auto=format&fit=crop&w=600&q=80" }
+            { title: t.audience1Title, desc: t.audience1Desc, img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80&fm=webp" },
+            { title: t.audience2Title, desc: t.audience2Desc, img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=600&q=80&fm=webp" },
+            { title: t.audience3Title, desc: t.audience3Desc, img: "https://images.unsplash.com/photo-1664575602276-acd073f104c1?auto=format&fit=crop&w=600&q=80&fm=webp" }
           ].map((item, index) => (
             <motion.div 
               key={index}
@@ -431,6 +437,7 @@ export default function App() {
                   alt={item.title} 
                   className="w-full h-full object-cover" 
                   referrerPolicy="no-referrer" 
+                  loading="lazy"
                 />
               </div>
               <div className="p-6 text-center">
@@ -470,8 +477,8 @@ export default function App() {
               <motion.span
                 key={index}
                 variants={{
-                  initial: { y: 40, opacity: 0, filter: 'blur(8px)' },
-                  animate: { y: 0, opacity: 1, filter: 'blur(0px)' }
+                  initial: { y: 20, opacity: 0 },
+                  animate: { y: 0, opacity: 1 }
                 }}
                 transition={{
                   duration: 0.8,
