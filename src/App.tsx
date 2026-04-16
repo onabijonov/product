@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronRight, ShieldCheck, Truck, Wrench, BadgeCheck, Phone, Send, Instagram, MapPin, Clock, ExternalLink, Globe, ChevronDown } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion, useAnimation } from 'motion/react';
 import logo from './assets/logo.svg';
 import iph1 from './assets/images/iph1.png';
 import mac1 from './assets/images/mac1.png';
@@ -13,6 +13,12 @@ export default function App() {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const languages = ["O'zbek tili", "Rus tili", "English", "O'zbek tili (Cyrillic)"];
   const t = translations[lang as keyof typeof translations] || translations["O'zbek tili"];
+
+  const contentControls = useAnimation();
+  useEffect(() => {
+    contentControls.set({ opacity: 0.5, filter: 'blur(8px)', y: 10 });
+    contentControls.start({ opacity: 1, filter: 'blur(0px)', y: 0 });
+  }, [lang, contentControls]);
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60, filter: 'blur(15px)' },
@@ -110,7 +116,12 @@ export default function App() {
         </header>
       </motion.div>
 
-      {/* Hero Section */}
+      <motion.div 
+        animate={contentControls} 
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }} 
+        className="w-full flex-1 flex flex-col items-center"
+      >
+        {/* Hero Section */}
       <section className="w-full pt-20 pb-16 flex flex-col items-center text-center px-6 overflow-x-hidden">
         <motion.h1 
           initial={{ opacity: 0, scale: 0.95, filter: 'blur(20px)' }}
@@ -574,6 +585,7 @@ export default function App() {
           </div>
         </div>
       </footer>
+      </motion.div>
     </div>
   );
 }
