@@ -90,6 +90,7 @@ export default function App() {
             <div className="relative">
               <button 
                 onClick={() => setIsLangOpen(!isLangOpen)}
+                aria-label="Til tanlash / Select Language"
                 className="text-[13px] font-semibold text-[#1D1D1F] px-3 py-2 bg-transparent hover:bg-[#F5F5F7] rounded-full transition-colors flex items-center gap-1.5"
               >
                 <Globe className="w-4 h-4 text-[#0071E3]" />
@@ -122,6 +123,7 @@ export default function App() {
 
             <motion.a 
               href="tel:+998884148888"
+              aria-label="Bizga qo'ng'iroq qilish / Call us"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="text-[13px] font-semibold text-white px-5 py-2 bg-[#0071E3] rounded-full border border-white/20 flex items-center gap-2 hover:bg-[#0077ED] transition-all"
@@ -548,6 +550,7 @@ export default function App() {
               frameBorder="0" 
               allowFullScreen={true}
               loading="lazy"
+              title="ProDuct do'koni joylashuvi / Shop location map"
               className="grayscale-[0.2] contrast-[1.1] brightness-[0.95] group-hover:grayscale-0 transition-all duration-700"
             ></iframe>
             <div className="absolute top-6 left-6 z-10">
