@@ -359,11 +359,11 @@ export default function App() {
               target="_blank"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="mt-6 mb-20 px-10 py-2.5 bg-[#1D1D1F] text-white text-[15px] font-semibold rounded-full shadow-lg flex items-center justify-center group-hover:bg-[#0071E3] transition-colors"
+              className="relative z-10 mt-6 mb-20 px-10 py-2.5 bg-[#1D1D1F] text-white text-[15px] font-semibold rounded-full shadow-lg flex items-center justify-center group-hover:bg-[#0071E3] transition-colors"
             >
               {t.btnDetails}
             </motion.a>
-            <div className="absolute bottom-0 w-full h-[60%] flex justify-center items-end">
+            <div className="absolute bottom-0 w-full h-[55%] md:h-[60%] flex justify-center items-end">
                 <motion.img 
                   whileHover={{ scale: 1.1 }}
                   transition={springConfig}
@@ -389,11 +389,11 @@ export default function App() {
               target="_blank"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="mt-6 mb-32 md:mb-20 px-10 py-2.5 bg-[#1D1D1F] text-white text-[15px] font-semibold rounded-full shadow-lg flex items-center justify-center group-hover:bg-[#0071E3] transition-colors"
+              className="relative z-10 mt-6 mb-32 md:mb-20 px-10 py-2.5 bg-[#1D1D1F] text-white text-[15px] font-semibold rounded-full shadow-lg flex items-center justify-center group-hover:bg-[#0071E3] transition-colors"
             >
               {t.btnDetails}
             </motion.a>
-            <div className="absolute bottom-0 w-full h-[65%] flex justify-center items-end">
+            <div className="absolute bottom-0 w-full h-[55%] md:h-[65%] flex justify-center items-end">
                 <motion.img 
                   whileHover={{ scale: 1.05 }}
                   transition={springConfig}
