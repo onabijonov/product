@@ -16,11 +16,16 @@ import { translations } from './locales';
 export default function App() {
   const [lang, setLang] = useState("O'zbek tili");
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const isFirstRender = React.useRef(true);
   const languages = ["O'zbek tili", "Rus tili", "English", "O'zbek tili (Cyrillic)"];
   const t = translations[lang as keyof typeof translations] || translations["O'zbek tili"];
 
   const contentControls = useAnimation();
   useEffect(() => {
+    if (isFirstRender.current) {
+        isFirstRender.current = false;
+        return;
+    }
     contentControls.set({ opacity: 0.5, filter: 'blur(8px)', y: 10 });
     contentControls.start({ opacity: 1, filter: 'blur(0px)', y: 0 });
   }, [lang, contentControls]);
@@ -128,25 +133,25 @@ export default function App() {
         {/* Hero Section */}
       <section className="w-full pt-20 pb-16 flex flex-col items-center text-center px-6 overflow-x-hidden">
         <motion.h1 
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 1, scale: 1 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+          transition={{ duration: 0 }}
           className="text-[40px] sm:text-[48px] md:text-[64px] lg:text-[84px] font-semibold tracking-[-0.02em] mb-4 max-w-5xl leading-[1.1] md:leading-[1.05] break-words hyphens-auto"
         >
           {t.heroTitle1} <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#1D1D1F] to-[#86868B]">{t.heroTitle2}</span>
         </motion.h1>
         <motion.p 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0 }}
           className="text-[24px] md:text-[28px] text-[#86868B] font-normal mt-2"
         >
           {t.heroSubtitle}
         </motion.p>
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 0 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0 }}
           className="flex flex-row gap-4 items-center justify-center mt-10"
         >
           <motion.a 
