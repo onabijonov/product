@@ -134,7 +134,7 @@ export default function App() {
         </header>
       </motion.div>
 
-      <motion.div 
+      <main 
         animate={contentControls} 
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }} 
         className="w-full flex-1 flex flex-col items-center"
@@ -583,7 +583,7 @@ export default function App() {
             </p>
           </div>
           <div className="flex flex-col gap-3">
-            <h4 className="text-[12px] font-semibold text-[#1D1D1F] uppercase tracking-widest mb-2">{t.footerContact}</h4>
+            <h3 className="text-[12px] font-semibold text-[#1D1D1F] uppercase tracking-widest mb-2">{t.footerContact}</h3>
             <a href="tel:+998884148888" className="text-[13px] text-[#6E6E73] hover:text-[#1D1D1F] flex items-center gap-2 transition-colors">
               <Phone className="w-4 h-4" /> +998(88)414-88-88
             </a>
@@ -595,7 +595,7 @@ export default function App() {
             </a>
           </div>
           <div className="flex flex-col gap-3">
-            <h4 className="text-[12px] font-semibold text-[#1D1D1F] uppercase tracking-widest mb-2">{t.footerAddress}</h4>
+            <h3 className="text-[12px] font-semibold text-[#1D1D1F] uppercase tracking-widest mb-2">{t.footerAddress}</h3>
             <div className="text-[13px] text-[#6E6E73] flex items-start gap-2">
               <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
               <span>{t.footerAddressText1}<br/>{t.footerAddressText2}</span>
@@ -617,7 +617,7 @@ export default function App() {
           </div>
         </div>
       </footer>
-      </motion.div>
+        </main>
     </div>
   );
 }
